@@ -14,13 +14,12 @@ const content = {
       sceneStatusLabel: "Explore the cabin",
       sceneTitle: "Rotate the cabin and inspect the objects around the walls.",
       sceneHint:
-        "Click the name sign for the resume, the lantern for a short profile, the skis for tools, the ship for the thesis, or the window glow for a closer interior look.",
+        "Click the name sign for the resume, the lantern for a short profile, the skis for tools, or the ship for the thesis.",
       hotspotNames: {
         resume: "Name sign",
         about: "Lantern by the door",
         thesis: "Rotor-sail ship on the pond",
         skills: "Skis on the side wall",
-        inside: "Warm window glow"
       },
       dockLabel: "Shortcuts",
       dockText:
@@ -35,35 +34,34 @@ const content = {
       modalKickerAbout: "Profile",
       modalKickerThesis: "Master thesis",
       modalKickerSkills: "Toolkit",
-      modalKickerInside: "Inside the cabin",
       resumeTitle: "Resume",
       aboutTitle: "Around the cabin",
       thesisTitle: "Rotor sails and maritime UI",
       skillsTitle: "Skis and stack",
-      insideTitle: "Inside the cabin",
       aboutText:
         "Pål combines interaction design, product thinking, and implementation. He tends to work best where design conversations and production code meet.",
       aboutBullets: [
         "Comfortable across frontend, backend, database work, and Azure infrastructure.",
         "Experienced with Scrum and with translating design research into technical decisions.",
-        "Motivated by intuitive web and mobile applications that solve real user needs."
+        "Motivated by intuitive web and mobile applications that solve real user needs.",
       ],
       thesisText:
         "The pond installation nods to Pål's NTNU master thesis on interfaces for sail propulsion on cargo ships. The small model uses rotor sails as a direct reference to that work.",
       thesisBullets: [
         "User-centred design from interviews through prototyping and usability testing.",
         "Interface concepts for monitoring and controlling sail propulsion in a bridge environment.",
-        "Built around OpenBridge 6.0 and ISO 9241-11 usability thinking."
+        "Built around OpenBridge 6.0 and ISO 9241-11 usability thinking.",
       ],
       skillsText:
         "The skis work as a compact inventory of the tools and working style behind the projects.",
-      insideText:
-        "The cabin interior is meant to feel lived-in: warm light, a person on the sofa, and a racing broadcast on the television as a small personal note.",
       statCards: [
         ["Current role", "Consultant at Bouvet Norge AS"],
         ["Education", "MSc Informatics + BSc Digital Business Development"],
         ["Core stack", "React, TypeScript, Node, Azure, Flutter"],
-        ["Focus", "Interaction design, frontend architecture, product-facing delivery"]
+        [
+          "Focus",
+          "Interaction design, frontend architecture, product-facing delivery",
+        ],
       ],
       sections: {
         summary: "Summary",
@@ -75,8 +73,8 @@ const content = {
         skills: "Technology and methods",
         industries: "Industry experience",
         roles: "Current roles",
-        languages: "Languages"
-      }
+        languages: "Languages",
+      },
     },
     resume: {
       summary:
@@ -85,7 +83,7 @@ const content = {
         "Strong experience with modern web development and design-led product work.",
         "Comfortable as a bridge between design teams and developers in Scrum projects.",
         "Hands-on with JavaScript, TypeScript, Python, Dart, React, Next.js, SQL, Flutter, .NET, FastAPI, and Azure.",
-        "Project experience spans energy, proptech, tourism, maritime UX, and finance."
+        "Project experience spans energy, proptech, tourism, maritime UX, and finance.",
       ],
       roles: ["Fullstack developer", "Azure developer"],
       languages: ["Norwegian", "English"],
@@ -93,34 +91,35 @@ const content = {
         "Maritime industry",
         "Finance and insurance",
         "Business services",
-        "Power and energy"
+        "Power and energy",
       ],
       education: [
         {
-          title: "MSc Informatics, Interaction Design, Games and Learning Technology",
+          title:
+            "MSc Informatics, Interaction Design, Games and Learning Technology",
           place: "NTNU",
-          date: "Aug 2023 - Jun 2025"
+          date: "Aug 2023 - Jun 2025",
         },
         {
           title: "BSc Digital Business Development",
           place: "NTNU",
-          date: "Aug 2020 - Jun 2023"
-        }
+          date: "Aug 2020 - Jun 2023",
+        },
       ],
       certifications: [
         {
           title: "AZ-900: Microsoft Azure Fundamentals",
-          meta: "Microsoft / Pearson VUE, Aug 2025"
+          meta: "Microsoft / Pearson VUE, Aug 2025",
         },
         {
           title: "AZ-204: Developing Solutions for Microsoft Azure",
-          meta: "Pearson VUE, Oct 2025"
-        }
+          meta: "Pearson VUE, Oct 2025",
+        },
       ],
       courses: [
         "Presentation technique: communicating with clarity (Sep 2025)",
         "AZ-204 Developing Solutions for Microsoft Azure (Oct 2025)",
-        "Unit testing for stronger system development practice (Dec 2025)"
+        "Unit testing for stronger system development practice (Dec 2025)",
       ],
       skills: [
         "React",
@@ -145,7 +144,7 @@ const content = {
         "Figma",
         "Miro",
         "Pulumi",
-        "Scrum"
+        "Scrum",
       ],
       experience: [
         {
@@ -157,8 +156,8 @@ const content = {
             "Built a legacy API in Express and Swagger so customers could keep using the old Simpleview request structure while content moved to Sanity CMS.",
             "Implemented transformation layers with TypeScript and Zod to convert between flat Simpleview payloads and Sanity's deeper models.",
             "Added routing, Vitest coverage, and mocking around the API to protect both behavior and route compatibility.",
-            "Extended Azure firewall setup with Pulumi, locking web app and database traffic behind controlled IP ranges and network rules."
-          ]
+            "Extended Azure firewall setup with Pulumi, locking web app and database traffic behind controlled IP ranges and network rules.",
+          ],
         },
         {
           title: "Wenn Property AS - Damage remediation reporting",
@@ -169,8 +168,8 @@ const content = {
             "Helped shape the data model and ER diagram for an AI-assisted reporting application in the housing sector.",
             "Set up Azure Blob Storage for image uploads and connected the frontend flow to backend and storage services.",
             "Built reusable Next.js components in TypeScript, CSS, and MUI as part of the frontend foundation.",
-            "Worked as the bridge between design and backend teams, translating field insight into technical requirements."
-          ]
+            "Worked as the bridge between design and backend teams, translating field insight into technical requirements.",
+          ],
         },
         {
           title: "Lyse Energi - Lyse Forbruks-app",
@@ -180,8 +179,8 @@ const content = {
           bullets: [
             "Extended an existing Flutter and .NET application with support for solar panels, inverters, and EV chargers via external APIs.",
             "Connected Enode data into the app so users could compare consumption with generated power and inspect savings.",
-            "Added documentation and clearer structure to improve the future developer experience in the codebase."
-          ]
+            "Added documentation and clearer structure to improve the future developer experience in the codebase.",
+          ],
         },
         {
           title: "OpenBridge - Designing User Interfaces for Sail Propulsion",
@@ -191,8 +190,8 @@ const content = {
           bullets: [
             "Led a full user-centred design process for cargo ship interfaces that monitor and control sail propulsion.",
             "Interviewed ship captains, created prototypes in Figma, specified user requirements, and evaluated usability against those requirements.",
-            "Worked within OpenBridge 6.0 and ISO 9241-11:2018 guidance to design high-usability interfaces with low cognitive load."
-          ]
+            "Worked within OpenBridge 6.0 and ISO 9241-11:2018 guidance to design high-usability interfaces with low cognitive load.",
+          ],
         },
         {
           title: "Finco AS - Innovative investment application",
@@ -202,15 +201,14 @@ const content = {
           bullets: [
             "Built a Python module that processed CSV-based financial data with pandas and applied Finco's prediction formulas.",
             "Connected the model flow to a database using a MySQL connector.",
-            "Developed React-based frontend views including an admin dashboard and chart-driven stock history visualizations."
-          ]
-        }
-      ]
-    }
+            "Developed React-based frontend views including an admin dashboard and chart-driven stock history visualizations.",
+          ],
+        },
+      ],
+    },
   },
   no: {
     ui: {
-      eyebrow: "Interaktiv vinterhytte",
       introLabel: "Oversikt",
       heroTitle: "Utvikler, designer og rolig problemløser.",
       heroSummary:
@@ -220,13 +218,12 @@ const content = {
       sceneStatusLabel: "Utforsk hytta",
       sceneTitle: "Roter hytta og undersøk gjenstandene rundt veggene.",
       sceneHint:
-        "Klikk navneskiltet for CV-en, lykten for en kort profil, skiene for verktøy, skipet for masteroppgaven eller vinduslyset for å komme nærmere innsynet i stua.",
+        "Klikk navneskiltet for CV-en, lykten for en kort profil, skiene for verktøy eller skipet for masteroppgaven.",
       hotspotNames: {
         resume: "Navneskilt",
         about: "Lykt ved døra",
         thesis: "Rotorseilskipet i dammen",
         skills: "Skiene på sideveggen",
-        inside: "Varmt vinduslys"
       },
       dockLabel: "Snarveier",
       dockText:
@@ -241,35 +238,37 @@ const content = {
       modalKickerAbout: "Profil",
       modalKickerThesis: "Masteroppgave",
       modalKickerSkills: "Verktøy",
-      modalKickerInside: "Inne i hytta",
       resumeTitle: "CV",
       aboutTitle: "Rundt hytta",
       thesisTitle: "Rotorseil og maritimt grensesnitt",
       skillsTitle: "Ski og stack",
-      insideTitle: "Inne i hytta",
       aboutText:
         "Pål kombinerer interaksjonsdesign, produktforståelse og implementasjon. Han fungerer best der designsamtaler og produksjonskode møtes.",
       aboutBullets: [
         "Komfortabel med frontend, backend, databasearbeid og Azure-infrastruktur.",
         "Erfaring med Scrum og med å oversette designinnsikt til tekniske beslutninger.",
-        "Motiveres av intuitive web- og mobilapplikasjoner som løser reelle brukerbehov."
+        "Motiveres av intuitive web- og mobilapplikasjoner som løser reelle brukerbehov.",
       ],
       thesisText:
         "Dammen med skipet er et nikk til Påls masteroppgave ved NTNU om grensesnitt for seilfremdrift på lasteskip. Den lille modellen bruker rotorseil som en direkte referanse til dette arbeidet.",
       thesisBullets: [
         "User-centred design fra intervjuer via prototyper til brukbarhetstesting.",
         "Grensesnittkonsepter for å overvåke og styre seilfremdrift i bromiljø.",
-        "Utviklet med OpenBridge 6.0 og ISO 9241-11 som brukbarhetsramme."
+        "Utviklet med OpenBridge 6.0 og ISO 9241-11 som brukbarhetsramme.",
       ],
       skillsText:
         "Skiene fungerer som en kompakt oversikt over verktøyene og arbeidsmåten bak prosjektene.",
-      insideText:
-        "Interiøret skal kjennes brukt og varmt: dempet belysning, en person i sofaen og racing på skjermen som en liten personlig detalj.",
       statCards: [
         ["Nåværende rolle", "Konsulent i Bouvet Norge AS"],
-        ["Utdanning", "Master i informatikk + bachelor i digital forretningsutvikling"],
+        [
+          "Utdanning",
+          "Master i informatikk + bachelor i digital forretningsutvikling",
+        ],
         ["Kjernestack", "React, TypeScript, Node, Azure, Flutter"],
-        ["Fokus", "Interaksjonsdesign, frontend-arkitektur og produktnær levering"]
+        [
+          "Fokus",
+          "Interaksjonsdesign, frontend-arkitektur og produktnær levering",
+        ],
       ],
       sections: {
         summary: "Sammendrag",
@@ -281,8 +280,8 @@ const content = {
         skills: "Teknologi og metoder",
         industries: "Bransjeerfaring",
         roles: "Aktuelle roller",
-        languages: "Språk"
-      }
+        languages: "Språk",
+      },
     },
     resume: {
       summary:
@@ -291,7 +290,7 @@ const content = {
         "Solid erfaring med moderne webutvikling og produktarbeid med tydelig designfokus.",
         "Trygg som bindeledd mellom designteam og utviklere i Scrum-prosjekter.",
         "Praktisk erfaring med JavaScript, TypeScript, Python, Dart, React, Next.js, SQL, Flutter, .NET, FastAPI og Azure.",
-        "Prosjekterfaring fra energi, proptech, reiseliv, maritim UX og finans."
+        "Prosjekterfaring fra energi, proptech, reiseliv, maritim UX og finans.",
       ],
       roles: ["Fullstack-utvikler", "Azure-utvikler"],
       languages: ["Norsk", "Engelsk"],
@@ -299,34 +298,35 @@ const content = {
         "Maritim industri",
         "Finans og forsikring",
         "Forretningsmessig tjenesteyting",
-        "Strøm og energi"
+        "Strøm og energi",
       ],
       education: [
         {
-          title: "Master i informatikk, interaksjonsdesign, spill og læringsteknologi",
+          title:
+            "Master i informatikk, interaksjonsdesign, spill og læringsteknologi",
           place: "NTNU",
-          date: "aug 2023 - jun 2025"
+          date: "aug 2023 - jun 2025",
         },
         {
           title: "Bachelor i digital forretningsutvikling",
           place: "NTNU",
-          date: "aug 2020 - jun 2023"
-        }
+          date: "aug 2020 - jun 2023",
+        },
       ],
       certifications: [
         {
           title: "AZ-900: Microsoft Azure Fundamentals",
-          meta: "Microsoft / Pearson VUE, aug 2025"
+          meta: "Microsoft / Pearson VUE, aug 2025",
         },
         {
           title: "AZ-204: Developing Solutions for Microsoft Azure",
-          meta: "Pearson VUE, okt 2025"
-        }
+          meta: "Pearson VUE, okt 2025",
+        },
       ],
       courses: [
         "Presentasjonsteknikk: kunsten å formidle (sep 2025)",
         "AZ-204 Developing Solutions for Microsoft Azure (okt 2025)",
-        "Systemutviklerskolen: unit testing for høyere kvalitet (des 2025)"
+        "Systemutviklerskolen: unit testing for høyere kvalitet (des 2025)",
       ],
       skills: [
         "React",
@@ -351,7 +351,7 @@ const content = {
         "Figma",
         "Miro",
         "Pulumi",
-        "Scrum"
+        "Scrum",
       ],
       experience: [
         {
@@ -363,8 +363,8 @@ const content = {
             "Bygget et legacy-API i Express og Swagger slik at kunder kunne beholde gammel Simpleview-struktur mens innholdet ble flyttet til Sanity CMS.",
             "Implementerte transformasjonslag med TypeScript og Zod for å konvertere mellom flat Simpleview-data og Sanitys dypere modeller.",
             "La til ruting, Vitest-dekning og mocking rundt API-et for å beskytte både funksjonalitet og rute-kompatibilitet.",
-            "Videreutviklet Azure-brannmur med Pulumi og låste webapp og database bak kontrollerte IP-regler og nettverksgrenser."
-          ]
+            "Videreutviklet Azure-brannmur med Pulumi og låste webapp og database bak kontrollerte IP-regler og nettverksgrenser.",
+          ],
         },
         {
           title: "Wenn Property AS - Skadesaneringsrapport",
@@ -375,8 +375,8 @@ const content = {
             "Bidro til datamodell og ER-diagram for en KI-støttet rapporteringsløsning i boligbransjen.",
             "Satte opp Azure Blob Storage for bildeopplasting og koblet frontend-flyten til backend og lagringstjenester.",
             "Bygget gjenbrukbare Next.js-komponenter i TypeScript, CSS og MUI som del av frontend-grunnmuren.",
-            "Fungerte som bindeledd mellom design og backend, og oversatte feltinnsikt til tekniske krav."
-          ]
+            "Fungerte som bindeledd mellom design og backend, og oversatte feltinnsikt til tekniske krav.",
+          ],
         },
         {
           title: "Lyse Energi - Lyse Forbruks-app",
@@ -386,8 +386,8 @@ const content = {
           bullets: [
             "Videreutviklet en eksisterende Flutter- og .NET-applikasjon med støtte for solcellepaneler, invertere og elbilladere via eksterne API-er.",
             "Koblet Enode-data inn i appen slik at brukere kunne sammenligne forbruk med egenprodusert strøm og se besparelser.",
-            "Forbedret dokumentasjon og struktur for å gi bedre utvikleropplevelse i kodebasen."
-          ]
+            "Forbedret dokumentasjon og struktur for å gi bedre utvikleropplevelse i kodebasen.",
+          ],
         },
         {
           title: "OpenBridge - Designing User Interfaces for Sail Propulsion",
@@ -397,8 +397,8 @@ const content = {
           bullets: [
             "Ledet en full user-centred design-prosess for skipsgrensesnitt som overvåker og styrer seilfremdrift.",
             "Intervjuet kapteiner, laget prototyper i Figma, spesifiserte brukerkrav og evaluerte brukbarhet opp mot kravene.",
-            "Arbeidet innenfor OpenBridge 6.0 og ISO 9241-11:2018 for å designe løsninger med høy brukbarhet og lav kognitiv belastning."
-          ]
+            "Arbeidet innenfor OpenBridge 6.0 og ISO 9241-11:2018 for å designe løsninger med høy brukbarhet og lav kognitiv belastning.",
+          ],
         },
         {
           title: "Finco AS - Innovativ investeringsapplikasjon",
@@ -408,12 +408,12 @@ const content = {
           bullets: [
             "Bygget en Python-modul som prosesserte CSV-basert finansdata med pandas og brukte Fincos egne prediksjonsformler.",
             "Koblet modellflyten til database via MySQL-connector.",
-            "Utviklet React-baserte frontend-visninger, inkludert admin-dashboard og grafvisning av aksjehistorikk."
-          ]
-        }
-      ]
-    }
-  }
+            "Utviklet React-baserte frontend-visninger, inkludert admin-dashboard og grafvisning av aksjehistorikk.",
+          ],
+        },
+      ],
+    },
+  },
 };
 
 const sceneCanvas = document.querySelector("#scene-canvas");
@@ -431,18 +431,18 @@ const modalBackdrop = document.querySelector("#modal-backdrop");
 
 const state = {
   language: "no",
-  theme: "day",
+  theme: "night",
   activePanel: null,
   pointerDown: null,
   focusAnimation: null,
-  hoveredPanel: null
+  hoveredPanel: null,
 };
 
 const scene = new THREE.Scene();
 const renderer = new THREE.WebGLRenderer({
   canvas: sceneCanvas,
   antialias: true,
-  alpha: true
+  alpha: true,
 });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -464,7 +464,7 @@ const pointer = new THREE.Vector2();
 
 const defaultFocus = {
   position: camera.position.clone(),
-  target: controls.target.clone()
+  target: controls.target.clone(),
 };
 
 const smokePuffs = [];
@@ -482,7 +482,7 @@ const dayPalette = {
   directional: 1.7,
   fill: 0.8,
   window: 0.7,
-  moon: 0
+  moon: 0,
 };
 
 const nightPalette = {
@@ -492,7 +492,7 @@ const nightPalette = {
   directional: 1.25,
   fill: 0.22,
   window: 1.7,
-  moon: 1.1
+  moon: 1.1,
 };
 
 scene.fog = new THREE.Fog(dayPalette.fog, 12, 34);
@@ -518,7 +518,11 @@ scene.add(windowLight);
 
 const moonMesh = new THREE.Mesh(
   new THREE.SphereGeometry(0.7, 24, 24),
-  new THREE.MeshBasicMaterial({ color: "#dbe7ff", transparent: true, opacity: 0 })
+  new THREE.MeshBasicMaterial({
+    color: "#dbe7ff",
+    transparent: true,
+    opacity: 0,
+  }),
 );
 moonMesh.position.set(-9, 8, -12);
 scene.add(moonMesh);
@@ -529,8 +533,8 @@ const stars = new THREE.Points(
     color: "#dbe6ff",
     size: 0.06,
     transparent: true,
-    opacity: 0
-  })
+    opacity: 0,
+  }),
 );
 {
   const positions = new Float32Array(180 * 3);
@@ -539,7 +543,10 @@ const stars = new THREE.Points(
     positions[i * 3 + 1] = 5 + Math.random() * 9;
     positions[i * 3 + 2] = (Math.random() - 0.5) * 28;
   }
-  stars.geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+  stars.geometry.setAttribute(
+    "position",
+    new THREE.BufferAttribute(positions, 3),
+  );
 }
 scene.add(stars);
 
@@ -547,32 +554,37 @@ const interactiveObjects = [];
 const cabinGroup = new THREE.Group();
 scene.add(cabinGroup);
 
-function addInteractive(mesh, id, focus) {
+function addInteractive(mesh, id, focus, options = {}) {
   mesh.userData.panelId = id;
   mesh.userData.focus = focus;
-  mesh.geometry?.computeBoundingBox?.();
-  const bounds = mesh.geometry?.boundingBox;
-  const marker = new THREE.Mesh(
-    new THREE.SphereGeometry(0.045, 12, 12),
-    new THREE.MeshStandardMaterial({
-      color: "#ffd79e",
-      emissive: "#ffbb63",
-      emissiveIntensity: 1.2
-    })
-  );
-  if (bounds) {
-    marker.position.set(0, bounds.max.y + 0.18, bounds.max.z + 0.08);
-  } else {
-    marker.position.set(0, 0.24, 0.08);
+  if (options.marker !== false) {
+    mesh.geometry?.computeBoundingBox?.();
+    const bounds = mesh.geometry?.boundingBox;
+    const marker = new THREE.Mesh(
+      new THREE.SphereGeometry(0.045, 12, 12),
+      new THREE.MeshStandardMaterial({
+        color: "#ffd79e",
+        emissive: "#ffbb63",
+        emissiveIntensity: 1.2,
+      }),
+    );
+    if (bounds) {
+      marker.position.set(0, bounds.max.y + 0.18, bounds.max.z + 0.08);
+    } else {
+      marker.position.set(0, 0.24, 0.08);
+    }
+    if (options.markerOffset) {
+      marker.position.add(options.markerOffset);
+    }
+    mesh.add(marker);
   }
-  mesh.add(marker);
   interactiveObjects.push(mesh);
 }
 
-function makeCanvasTexture(draw) {
+function makeCanvasTexture(draw, { width = 512, height = 512 } = {}) {
   const canvas = document.createElement("canvas");
-  canvas.width = 512;
-  canvas.height = 512;
+  canvas.width = width;
+  canvas.height = height;
   const ctx = canvas.getContext("2d");
   draw(ctx, canvas);
   const texture = new THREE.CanvasTexture(canvas);
@@ -644,7 +656,12 @@ function buildScene() {
   stoneTexture.repeat.set(1.6, 1.6);
 
   const iceTexture = makeCanvasTexture((ctx, canvas) => {
-    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    const gradient = ctx.createLinearGradient(
+      0,
+      0,
+      canvas.width,
+      canvas.height,
+    );
     gradient.addColorStop(0, "#9fd8e8");
     gradient.addColorStop(1, "#4e7ea2");
     ctx.fillStyle = gradient;
@@ -653,19 +670,48 @@ function buildScene() {
       ctx.strokeStyle = `rgba(255,255,255,${0.08 + i * 0.01})`;
       ctx.beginPath();
       ctx.moveTo((i * 34) % canvas.width, 0);
-      ctx.lineTo(canvas.width - (i * 28) % canvas.width, canvas.height);
+      ctx.lineTo(canvas.width - ((i * 28) % canvas.width), canvas.height);
       ctx.stroke();
     }
   });
 
-  const snowMaterial = new THREE.MeshStandardMaterial({ color: "#f8fbff", roughness: 0.95 });
-  const snowShadowMaterial = new THREE.MeshStandardMaterial({ color: "#e7eef8", roughness: 0.92 });
-  const wallMaterial = new THREE.MeshStandardMaterial({ color: "#ffffff", map: woodTexture, roughness: 0.88 });
-  const trimMaterial = new THREE.MeshStandardMaterial({ color: "#ffffff", map: trimTexture, roughness: 0.84 });
-  const roofMaterial = new THREE.MeshStandardMaterial({ color: "#ffffff", map: roofTexture, roughness: 0.86 });
-  const accentMaterial = new THREE.MeshStandardMaterial({ color: "#be6d3d", roughness: 0.8 });
-  const stoneMaterial = new THREE.MeshStandardMaterial({ color: "#ffffff", map: stoneTexture, roughness: 0.95 });
-  const metalMaterial = new THREE.MeshStandardMaterial({ color: "#69788b", roughness: 0.38, metalness: 0.45 });
+  const snowMaterial = new THREE.MeshStandardMaterial({
+    color: "#f8fbff",
+    roughness: 0.95,
+  });
+  const snowShadowMaterial = new THREE.MeshStandardMaterial({
+    color: "#e7eef8",
+    roughness: 0.92,
+  });
+  const wallMaterial = new THREE.MeshStandardMaterial({
+    color: "#ffffff",
+    map: woodTexture,
+    roughness: 0.88,
+  });
+  const trimMaterial = new THREE.MeshStandardMaterial({
+    color: "#ffffff",
+    map: trimTexture,
+    roughness: 0.84,
+  });
+  const roofMaterial = new THREE.MeshStandardMaterial({
+    color: "#ffffff",
+    map: roofTexture,
+    roughness: 0.86,
+  });
+  const accentMaterial = new THREE.MeshStandardMaterial({
+    color: "#be6d3d",
+    roughness: 0.8,
+  });
+  const stoneMaterial = new THREE.MeshStandardMaterial({
+    color: "#ffffff",
+    map: stoneTexture,
+    roughness: 0.95,
+  });
+  const metalMaterial = new THREE.MeshStandardMaterial({
+    color: "#69788b",
+    roughness: 0.38,
+    metalness: 0.45,
+  });
   const glassMaterial = new THREE.MeshStandardMaterial({
     color: "#e3efff",
     emissive: "#ffd39b",
@@ -673,7 +719,7 @@ function buildScene() {
     transparent: true,
     opacity: 0.12,
     roughness: 0.06,
-    metalness: 0.18
+    metalness: 0.18,
   });
 
   const livingRoomLeftTexture = makeCanvasTexture((ctx, canvas) => {
@@ -759,11 +805,25 @@ function buildScene() {
     ctx.fillRect(116, 122, 68, 28);
   });
 
-  const ground = new THREE.Mesh(new THREE.CylinderGeometry(9.2, 10.2, 0.9, 12), snowMaterial);
+  const ground = new THREE.Mesh(
+    new THREE.CylinderGeometry(10.8, 11.8, 0.9, 16),
+    snowMaterial,
+  );
   ground.position.y = -0.45;
   scene.add(ground);
 
-  const driftA = new THREE.Mesh(new THREE.SphereGeometry(2.1, 10, 10), snowShadowMaterial);
+  const farGround = new THREE.Mesh(
+    new THREE.RingGeometry(11.4, 22.8, 56),
+    snowShadowMaterial,
+  );
+  farGround.rotation.x = -Math.PI * 0.5;
+  farGround.position.y = -0.12;
+  scene.add(farGround);
+
+  const driftA = new THREE.Mesh(
+    new THREE.SphereGeometry(2.1, 10, 10),
+    snowShadowMaterial,
+  );
   driftA.position.set(-2.8, 0.15, 4.25);
   driftA.scale.set(1.4, 0.42, 0.9);
   scene.add(driftA);
@@ -779,14 +839,20 @@ function buildScene() {
   scene.add(driftC);
 
   for (let i = 0; i < 6; i += 1) {
-    const stone = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.12, 0.4), stoneMaterial);
+    const stone = new THREE.Mesh(
+      new THREE.BoxGeometry(0.55, 0.12, 0.4),
+      stoneMaterial,
+    );
     stone.position.set(-0.2 + i * 0.28, -0.02 + i * 0.02, 4.4 + i * 0.34);
     stone.rotation.y = (i % 2 ? -1 : 1) * 0.35;
     scene.add(stone);
   }
 
-  const pondSnowBank = new THREE.Mesh(new THREE.CylinderGeometry(2.4, 2.6, 0.28, 20), snowShadowMaterial);
-  pondSnowBank.position.set(4.2, -0.18, 1.65);
+  const pondSnowBank = new THREE.Mesh(
+    new THREE.CylinderGeometry(2.4, 2.6, 0.28, 20),
+    snowShadowMaterial,
+  );
+  pondSnowBank.position.set(5.8, -0.18, 1.05);
   pondSnowBank.scale.set(1.1, 1, 0.72);
   scene.add(pondSnowBank);
   const pond = new THREE.Mesh(
@@ -797,16 +863,29 @@ function buildScene() {
       roughness: 0.18,
       metalness: 0.08,
       emissive: "#7ab8d8",
-      emissiveIntensity: 0.08
-    })
+      emissiveIntensity: 0.08,
+    }),
   );
-  pond.position.set(4.2, -0.04, 1.65);
+  pond.position.set(5.8, -0.04, 1.05);
   pond.scale.set(1, 1, 0.66);
   scene.add(pond);
 
   const ridgeLine = new THREE.Mesh(
-    new THREE.CylinderGeometry(18, 21, 3.6, 18, 1, true, Math.PI * 0.16, Math.PI * 1.68),
-    new THREE.MeshStandardMaterial({ color: "#d8e4ef", roughness: 1, side: THREE.DoubleSide })
+    new THREE.CylinderGeometry(
+      18,
+      21,
+      3.6,
+      18,
+      1,
+      true,
+      Math.PI * 0.16,
+      Math.PI * 1.68,
+    ),
+    new THREE.MeshStandardMaterial({
+      color: "#d8e4ef",
+      roughness: 1,
+      side: THREE.DoubleSide,
+    }),
   );
   ridgeLine.position.set(0, 0.95, -1.6);
   scene.add(ridgeLine);
@@ -818,45 +897,70 @@ function buildScene() {
       continue;
     }
     const tree = new THREE.Group();
-    const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.14, 1.2, 7), trimMaterial);
+    const trunk = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.1, 0.14, 1.2, 7),
+      trimMaterial,
+    );
     const foliageLower = new THREE.Mesh(
       new THREE.ConeGeometry(0.72, 1.6, 8),
-      new THREE.MeshStandardMaterial({ color: "#3f5a48", roughness: 0.95 })
+      new THREE.MeshStandardMaterial({ color: "#3f5a48", roughness: 0.95 }),
     );
     foliageLower.position.y = 1.02;
     const foliageUpper = new THREE.Mesh(
       new THREE.ConeGeometry(0.48, 1.1, 8),
-      new THREE.MeshStandardMaterial({ color: "#334c3d", roughness: 0.95 })
+      new THREE.MeshStandardMaterial({ color: "#334c3d", roughness: 0.95 }),
     );
     foliageUpper.position.y = 1.68;
-    const snowCap = new THREE.Mesh(new THREE.ConeGeometry(0.5, 0.22, 8), snowMaterial);
+    const snowCap = new THREE.Mesh(
+      new THREE.ConeGeometry(0.5, 0.22, 8),
+      snowMaterial,
+    );
     snowCap.position.y = 2.18;
     tree.add(trunk, foliageLower, foliageUpper, snowCap);
     const radius = 13.4 + (i % 5) * 0.7 + Math.random() * 1.2;
-    tree.position.set(Math.cos(angle) * radius, 0.05, Math.sin(angle) * radius - 0.8);
+    tree.position.set(
+      Math.cos(angle) * radius,
+      0,
+      Math.sin(angle) * radius - 0.8,
+    );
     tree.scale.setScalar(0.85 + (i % 4) * 0.18);
     scene.add(tree);
   }
 
-  const foundation = new THREE.Mesh(new THREE.BoxGeometry(4.9, 0.65, 4.55), stoneMaterial);
+  const foundation = new THREE.Mesh(
+    new THREE.BoxGeometry(4.9, 0.65, 4.55),
+    stoneMaterial,
+  );
   foundation.position.y = 0.33;
   cabinGroup.add(foundation);
 
-  const foundationSnow = new THREE.Mesh(new THREE.BoxGeometry(5.05, 0.12, 4.7), snowShadowMaterial);
+  const foundationSnow = new THREE.Mesh(
+    new THREE.BoxGeometry(5.05, 0.12, 4.7),
+    snowShadowMaterial,
+  );
   foundationSnow.position.y = 0.72;
   cabinGroup.add(foundationSnow);
 
-  const cabinCore = new THREE.Mesh(new THREE.BoxGeometry(4.6, 2.85, 4.2), wallMaterial);
-  cabinCore.position.y = 2.12;
+  const cabinCore = new THREE.Mesh(
+    new THREE.BoxGeometry(4.6, 2.85, 3.3),
+    wallMaterial,
+  );
+  cabinCore.position.set(0, 2.12, -0.44);
   cabinGroup.add(cabinCore);
 
   for (let i = 0; i < 12; i += 1) {
     const y = 0.88 + i * 0.23;
-    const backLog = new THREE.Mesh(new THREE.BoxGeometry(4.9, 0.16, 0.22), trimMaterial);
+    const backLog = new THREE.Mesh(
+      new THREE.BoxGeometry(4.9, 0.16, 0.22),
+      trimMaterial,
+    );
     backLog.position.y = y;
     backLog.position.z = -2.18;
     cabinGroup.add(backLog);
-    const sideLog = new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.16, 4.06), trimMaterial);
+    const sideLog = new THREE.Mesh(
+      new THREE.BoxGeometry(0.22, 0.16, 4.06),
+      trimMaterial,
+    );
     sideLog.position.set(2.33, y, 0);
     cabinGroup.add(sideLog);
     const sideLogOpposite = sideLog.clone();
@@ -864,34 +968,72 @@ function buildScene() {
     cabinGroup.add(sideLogOpposite);
   }
 
-  const frontFacade = new THREE.Mesh(new THREE.BoxGeometry(4.72, 2.86, 0.12), wallMaterial);
-  frontFacade.position.set(0, 2.12, 2.11);
-  cabinGroup.add(frontFacade);
-  for (let i = 0; i < 5; i += 1) {
-    const trimStrip = new THREE.Mesh(new THREE.BoxGeometry(4.78, 0.08, 0.08), trimMaterial);
-    trimStrip.position.set(0, 1.03 + i * 0.48, 2.17);
-    cabinGroup.add(trimStrip);
-  }
+  [
+    { size: [4.72, 0.58, 0.12], position: [0, 3.02, 2.11] },
+    { size: [1.08, 0.52, 0.12], position: [-1.47, 1.16, 2.11] },
+    { size: [1.08, 0.52, 0.12], position: [1.6, 1.16, 2.11] },
+    { size: [0.5, 2.1, 0.12], position: [-0.62, 2.0, 2.11] },
+    { size: [0.34, 2.1, 0.12], position: [0.9, 2.0, 2.11] },
+    { size: [0.38, 2.1, 0.12], position: [-2.0, 2.0, 2.11] },
+    { size: [0.22, 2.1, 0.12], position: [2.18, 2.0, 2.11] },
+  ].forEach(({ size, position }) => {
+    const panel = new THREE.Mesh(
+      new THREE.BoxGeometry(size[0], size[1], size[2]),
+      wallMaterial,
+    );
+    panel.position.set(position[0], position[1], position[2]);
+    cabinGroup.add(panel);
+  });
+  const lowerFacadeTrim = new THREE.Mesh(
+    new THREE.BoxGeometry(4.78, 0.08, 0.08),
+    trimMaterial,
+  );
+  lowerFacadeTrim.position.set(0, 0.98, 2.17);
+  cabinGroup.add(lowerFacadeTrim);
+  const upperFacadeTrim = new THREE.Mesh(
+    new THREE.BoxGeometry(4.78, 0.08, 0.08),
+    trimMaterial,
+  );
+  upperFacadeTrim.position.set(0, 3.08, 2.17);
+  cabinGroup.add(upperFacadeTrim);
+  const leftFacadeTrim = new THREE.Mesh(
+    new THREE.BoxGeometry(0.08, 2.88, 0.08),
+    trimMaterial,
+  );
+  leftFacadeTrim.position.set(-2.36, 2.12, 2.17);
+  cabinGroup.add(leftFacadeTrim);
+  const rightFacadeTrim = leftFacadeTrim.clone();
+  rightFacadeTrim.position.x = 2.36;
+  cabinGroup.add(rightFacadeTrim);
 
   [
     [-2.2, -2.02],
     [2.2, -2.02],
     [-2.2, 2.02],
-    [2.2, 2.02]
+    [2.2, 2.02],
   ].forEach(([x, z]) => {
-    const post = new THREE.Mesh(new THREE.BoxGeometry(0.24, 3.2, 0.24), trimMaterial);
+    const post = new THREE.Mesh(
+      new THREE.BoxGeometry(0.24, 3.2, 0.24),
+      trimMaterial,
+    );
     post.position.set(x, 2.18, z);
     cabinGroup.add(post);
   });
 
-  const eaveFront = new THREE.Mesh(new THREE.BoxGeometry(5.18, 0.18, 0.18), trimMaterial);
+  const eaveFront = new THREE.Mesh(
+    new THREE.BoxGeometry(5.18, 0.18, 0.18),
+    trimMaterial,
+  );
   eaveFront.position.set(0, 3.54, 2.34);
   cabinGroup.add(eaveFront);
   const eaveBack = eaveFront.clone();
   eaveBack.position.z = -2.34;
   cabinGroup.add(eaveBack);
 
-  const roofLeft = new THREE.Mesh(new THREE.BoxGeometry(3.1, 0.24, 5.35), roofMaterial);
+  const roofLeft = new THREE.Mesh(
+    new THREE.BoxGeometry(3.1, 0.24, 5.35),
+    roofMaterial,
+  );
   roofLeft.position.set(-0.98, 4.24, 0);
   roofLeft.rotation.z = 0.62;
   cabinGroup.add(roofLeft);
@@ -900,7 +1042,10 @@ function buildScene() {
   roofRight.rotation.z = -0.62;
   cabinGroup.add(roofRight);
 
-  const roofSnowLeft = new THREE.Mesh(new THREE.BoxGeometry(3.2, 0.14, 5.45), snowMaterial);
+  const roofSnowLeft = new THREE.Mesh(
+    new THREE.BoxGeometry(3.2, 0.14, 5.45),
+    snowMaterial,
+  );
   roofSnowLeft.position.set(-1.06, 4.38, 0);
   roofSnowLeft.rotation.z = 0.62;
   cabinGroup.add(roofSnowLeft);
@@ -909,88 +1054,124 @@ function buildScene() {
   roofSnowRight.rotation.z = -0.62;
   cabinGroup.add(roofSnowRight);
 
-  const ridge = new THREE.Mesh(new THREE.BoxGeometry(0.26, 0.26, 5.1), trimMaterial);
+  const gableShape = new THREE.Shape();
+  gableShape.moveTo(-2.18, 0);
+  gableShape.lineTo(2.18, 0);
+  gableShape.lineTo(0, 1.52);
+  gableShape.lineTo(-2.18, 0);
+  const gableGeometry = new THREE.ExtrudeGeometry(gableShape, {
+    depth: 0.12,
+    bevelEnabled: false,
+  });
+  const frontGable = new THREE.Mesh(gableGeometry, wallMaterial);
+  frontGable.position.set(0, 3.52, 2.12);
+  cabinGroup.add(frontGable);
+  const backGable = new THREE.Mesh(gableGeometry, wallMaterial);
+  backGable.position.set(0, 3.52, -2.24);
+  cabinGroup.add(backGable);
+
+  const ridge = new THREE.Mesh(
+    new THREE.BoxGeometry(0.26, 0.26, 5.1),
+    trimMaterial,
+  );
   ridge.position.set(0, 5.03, 0);
   cabinGroup.add(ridge);
 
-  const chimney = new THREE.Mesh(new THREE.BoxGeometry(0.62, 1.78, 0.62), stoneMaterial);
+  const chimney = new THREE.Mesh(
+    new THREE.BoxGeometry(0.62, 1.78, 0.62),
+    stoneMaterial,
+  );
   chimney.position.set(1.35, 5.02, -0.66);
   cabinGroup.add(chimney);
-  const chimneyCap = new THREE.Mesh(new THREE.BoxGeometry(0.76, 0.12, 0.76), metalMaterial);
+  const chimneyCap = new THREE.Mesh(
+    new THREE.BoxGeometry(0.76, 0.12, 0.76),
+    metalMaterial,
+  );
   chimneyCap.position.set(1.35, 5.99, -0.66);
   cabinGroup.add(chimneyCap);
 
-  const porch = new THREE.Mesh(new THREE.BoxGeometry(3.85, 0.28, 2.15), trimMaterial);
+  const porch = new THREE.Mesh(
+    new THREE.BoxGeometry(3.85, 0.28, 2.15),
+    trimMaterial,
+  );
   porch.position.set(0, 0.86, 3.05);
   cabinGroup.add(porch);
 
-  const porchSnow = new THREE.Mesh(new THREE.BoxGeometry(3.95, 0.1, 2.22), snowShadowMaterial);
+  const porchSnow = new THREE.Mesh(
+    new THREE.BoxGeometry(3.95, 0.1, 2.22),
+    snowShadowMaterial,
+  );
   porchSnow.position.set(0, 1.05, 3.05);
   cabinGroup.add(porchSnow);
 
-  const stepOne = new THREE.Mesh(new THREE.BoxGeometry(1.9, 0.18, 0.54), trimMaterial);
+  const stepOne = new THREE.Mesh(
+    new THREE.BoxGeometry(1.9, 0.18, 0.54),
+    trimMaterial,
+  );
   stepOne.position.set(0, 0.53, 4.02);
   cabinGroup.add(stepOne);
-  const stepTwo = new THREE.Mesh(new THREE.BoxGeometry(1.36, 0.16, 0.42), trimMaterial);
+  const stepTwo = new THREE.Mesh(
+    new THREE.BoxGeometry(1.36, 0.16, 0.42),
+    trimMaterial,
+  );
   stepTwo.position.set(0, 0.35, 4.38);
   cabinGroup.add(stepTwo);
 
-  [
-    [-1.55, 2.65],
-    [1.55, 2.65],
-    [-1.55, 3.72],
-    [1.55, 3.72]
-  ].forEach(([x, z]) => {
-    const porchPost = new THREE.Mesh(new THREE.BoxGeometry(0.16, 1.84, 0.16), trimMaterial);
-    porchPost.position.set(x, 1.92, z);
-    cabinGroup.add(porchPost);
-  });
-
-  const handrailFront = new THREE.Mesh(new THREE.BoxGeometry(3.28, 0.12, 0.14), trimMaterial);
-  handrailFront.position.set(0, 1.72, 3.9);
-  cabinGroup.add(handrailFront);
-  const handrailLeft = new THREE.Mesh(new THREE.BoxGeometry(0.14, 0.12, 1.08), trimMaterial);
-  handrailLeft.position.set(-1.57, 1.72, 3.2);
-  cabinGroup.add(handrailLeft);
-  const handrailRight = handrailLeft.clone();
-  handrailRight.position.x = 1.57;
-  cabinGroup.add(handrailRight);
-
-  const benchSeat = new THREE.Mesh(new THREE.BoxGeometry(0.92, 0.08, 0.34), trimMaterial);
-  benchSeat.position.set(-1.08, 1.22, 2.63);
-  cabinGroup.add(benchSeat);
-  const benchBack = new THREE.Mesh(new THREE.BoxGeometry(0.92, 0.44, 0.08), trimMaterial);
-  benchBack.position.set(-1.08, 1.44, 2.46);
-  cabinGroup.add(benchBack);
-
-  const door = new THREE.Mesh(new THREE.BoxGeometry(1.02, 2.14, 0.14), trimMaterial);
+  const door = new THREE.Mesh(
+    new THREE.BoxGeometry(1.02, 2.14, 0.14),
+    trimMaterial,
+  );
   door.position.set(0.2, 1.82, 2.2);
   cabinGroup.add(door);
-  const doorInset = new THREE.Mesh(new THREE.BoxGeometry(0.8, 1.84, 0.05), wallMaterial);
+  const doorInset = new THREE.Mesh(
+    new THREE.BoxGeometry(0.8, 1.84, 0.05),
+    wallMaterial,
+  );
   doorInset.position.set(0.2, 1.82, 2.29);
   cabinGroup.add(doorInset);
-  const doorWindow = new THREE.Mesh(new THREE.BoxGeometry(0.46, 0.56, 0.04), glassMaterial);
+  const doorWindow = new THREE.Mesh(
+    new THREE.BoxGeometry(0.46, 0.56, 0.04),
+    glassMaterial,
+  );
   doorWindow.position.set(0.2, 2.18, 2.31);
   cabinGroup.add(doorWindow);
-  const doorHandle = new THREE.Mesh(new THREE.SphereGeometry(0.05, 12, 12), accentMaterial);
+  const doorHandle = new THREE.Mesh(
+    new THREE.SphereGeometry(0.05, 12, 12),
+    accentMaterial,
+  );
   doorHandle.position.set(0.48, 1.78, 2.32);
   cabinGroup.add(doorHandle);
-  const wreath = new THREE.Mesh(new THREE.TorusGeometry(0.18, 0.05, 8, 18), accentMaterial);
+  const wreath = new THREE.Mesh(
+    new THREE.TorusGeometry(0.18, 0.05, 8, 18),
+    accentMaterial,
+  );
   wreath.position.set(0.2, 1.34, 2.29);
   cabinGroup.add(wreath);
 
-  function createWindowUnit({ position, rotationY = 0, texture, width = 1.06, height = 1.16, shutterDepth = 0.18 }) {
+  function createWindowUnit({
+    position,
+    rotationY = 0,
+    texture,
+    width = 1.06,
+    height = 1.16,
+  }) {
     const group = new THREE.Group();
     group.position.copy(position);
     group.rotation.y = rotationY;
 
-    const topFrame = new THREE.Mesh(new THREE.BoxGeometry(width + 0.18, 0.12, 0.12), trimMaterial);
+    const topFrame = new THREE.Mesh(
+      new THREE.BoxGeometry(width + 0.18, 0.12, 0.12),
+      trimMaterial,
+    );
     topFrame.position.y = height / 2 + 0.03;
     group.add(topFrame);
     const bottomFrame = topFrame.clone();
     bottomFrame.position.y *= -1;
     group.add(bottomFrame);
-    const leftFrame = new THREE.Mesh(new THREE.BoxGeometry(0.12, height + 0.06, 0.12), trimMaterial);
+    const leftFrame = new THREE.Mesh(
+      new THREE.BoxGeometry(0.12, height + 0.06, 0.12),
+      trimMaterial,
+    );
     leftFrame.position.x = -(width / 2 + 0.03);
     group.add(leftFrame);
     const rightFrame = leftFrame.clone();
@@ -999,99 +1180,128 @@ function buildScene() {
 
     const interior = new THREE.Mesh(
       new THREE.PlaneGeometry(width - 0.08, height - 0.08),
-      new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide })
+      new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide }),
     );
     interior.position.z = -0.14;
     group.add(interior);
 
-    const glass = new THREE.Mesh(new THREE.BoxGeometry(width, height, 0.06), glassMaterial);
+    const glass = new THREE.Mesh(
+      new THREE.BoxGeometry(width, height, 0.06),
+      glassMaterial,
+    );
     glass.position.z = 0.02;
     group.add(glass);
 
-    const mullionVertical = new THREE.Mesh(new THREE.BoxGeometry(0.08, height - 0.08, 0.08), trimMaterial);
+    const mullionVertical = new THREE.Mesh(
+      new THREE.BoxGeometry(0.08, height - 0.08, 0.08),
+      trimMaterial,
+    );
     group.add(mullionVertical);
-    const mullionHorizontal = new THREE.Mesh(new THREE.BoxGeometry(width - 0.08, 0.08, 0.08), trimMaterial);
+    const mullionHorizontal = new THREE.Mesh(
+      new THREE.BoxGeometry(width - 0.08, 0.08, 0.08),
+      trimMaterial,
+    );
     group.add(mullionHorizontal);
-
-    const shutterLeft = new THREE.Mesh(new THREE.BoxGeometry(0.22, height + 0.08, shutterDepth), trimMaterial);
-    shutterLeft.position.x = -(width / 2 + 0.18);
-    group.add(shutterLeft);
-    const shutterRight = shutterLeft.clone();
-    shutterRight.position.x *= -1;
-    group.add(shutterRight);
 
     cabinGroup.add(group);
     return { group, glass };
   }
 
-  const leftWindowUnit = createWindowUnit({
+  createWindowUnit({
     position: new THREE.Vector3(-1.47, 2.12, 2.17),
-    texture: livingRoomLeftTexture
+    texture: livingRoomLeftTexture,
   });
-  const rightWindowUnit = createWindowUnit({
+  createWindowUnit({
     position: new THREE.Vector3(1.6, 2.12, 2.17),
-    texture: livingRoomRightTexture
+    texture: livingRoomRightTexture,
   });
   createWindowUnit({
     position: new THREE.Vector3(2.36, 2.05, -0.18),
     rotationY: -Math.PI * 0.5,
     texture: sideRoomTexture,
     width: 0.96,
-    height: 1.08
+    height: 1.08,
   });
 
-  const sofaBase = new THREE.Mesh(new THREE.BoxGeometry(1.18, 0.42, 0.24), trimMaterial);
-  sofaBase.position.set(-1.46, 1.6, 2.06);
+  const sofaBase = new THREE.Mesh(
+    new THREE.BoxGeometry(1.18, 0.42, 0.24),
+    trimMaterial,
+  );
+  sofaBase.position.set(-1.46, 1.6, 1.72);
   cabinGroup.add(sofaBase);
-  const sofaBack = new THREE.Mesh(new THREE.BoxGeometry(1.18, 0.52, 0.14), trimMaterial);
-  sofaBack.position.set(-1.46, 1.88, 1.96);
+  const sofaBack = new THREE.Mesh(
+    new THREE.BoxGeometry(1.18, 0.52, 0.14),
+    trimMaterial,
+  );
+  sofaBack.position.set(-1.46, 1.88, 1.58);
   cabinGroup.add(sofaBack);
-  const personBody = new THREE.Mesh(new THREE.BoxGeometry(0.24, 0.38, 0.16), accentMaterial);
-  personBody.position.set(-1.3, 1.88, 2.08);
+  const personBody = new THREE.Mesh(
+    new THREE.BoxGeometry(0.24, 0.38, 0.16),
+    accentMaterial,
+  );
+  personBody.position.set(-1.3, 1.88, 1.76);
   cabinGroup.add(personBody);
-  const personHead = new THREE.Mesh(new THREE.SphereGeometry(0.09, 12, 12), new THREE.MeshStandardMaterial({ color: "#e7c6a0" }));
-  personHead.position.set(-1.3, 2.15, 2.08);
+  const personHead = new THREE.Mesh(
+    new THREE.SphereGeometry(0.09, 12, 12),
+    new THREE.MeshStandardMaterial({ color: "#e7c6a0" }),
+  );
+  personHead.position.set(-1.3, 2.15, 1.76);
   cabinGroup.add(personHead);
-  const interiorTvBody = new THREE.Mesh(new THREE.BoxGeometry(0.76, 0.46, 0.12), trimMaterial);
-  interiorTvBody.position.set(1.58, 1.96, 1.96);
+  const interiorTvBody = new THREE.Mesh(
+    new THREE.BoxGeometry(0.76, 0.46, 0.12),
+    trimMaterial,
+  );
+  interiorTvBody.position.set(1.58, 1.96, 1.64);
   cabinGroup.add(interiorTvBody);
   const interiorTvScreen = new THREE.Mesh(
     new THREE.PlaneGeometry(0.62, 0.34),
-    new THREE.MeshBasicMaterial({ map: livingRoomRightTexture })
+    new THREE.MeshBasicMaterial({ map: livingRoomRightTexture }),
   );
-  interiorTvScreen.position.set(1.58, 1.96, 2.03);
+  interiorTvScreen.position.set(1.58, 1.96, 1.71);
   cabinGroup.add(interiorTvScreen);
 
-  const skiLeft = new THREE.Mesh(new THREE.BoxGeometry(0.1, 2.2, 0.08), accentMaterial);
-  skiLeft.position.set(2.22, 1.95, 0.88);
-  skiLeft.rotation.z = 0.08;
+  const skiLeft = new THREE.Mesh(
+    new THREE.BoxGeometry(0.1, 2.2, 0.08),
+    accentMaterial,
+  );
+  skiLeft.position.set(2.86, 1.08, 3.72);
+  skiLeft.rotation.z = -0.28;
+  skiLeft.rotation.y = -0.18;
   cabinGroup.add(skiLeft);
   const skiRight = skiLeft.clone();
-  skiRight.position.z = 1.12;
-  skiRight.rotation.z = -0.08;
+  skiRight.position.set(2.68, 1.08, 3.94);
+  skiRight.rotation.z = -0.38;
+  skiRight.rotation.y = -0.08;
   cabinGroup.add(skiRight);
-  const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 2.05, 6), metalMaterial);
-  pole.position.set(1.95, 1.82, 0.8);
-  pole.rotation.z = 0.08;
+  const pole = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.03, 0.03, 2.05, 6),
+    metalMaterial,
+  );
+  pole.position.set(2.48, 1.05, 3.84);
+  pole.rotation.z = -0.34;
+  pole.rotation.y = 0.12;
   cabinGroup.add(pole);
   addInteractive(skiLeft, "skills", {
-    position: new THREE.Vector3(5.1, 2.55, 2.4),
-    target: new THREE.Vector3(2.14, 1.92, 0.98)
+    position: new THREE.Vector3(5.3, 2.2, 5.1),
+    target: new THREE.Vector3(2.74, 1.06, 3.84),
   });
-  addInteractive(rightWindowUnit.glass, "inside", {
-    position: new THREE.Vector3(2.85, 2.55, 4.9),
-    target: new THREE.Vector3(1.58, 2.02, 2.2)
-  });
-
   for (let i = 0; i < 4; i += 1) {
-    const log = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.11, 0.72, 7), trimMaterial);
+    const log = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.11, 0.11, 0.72, 7),
+      trimMaterial,
+    );
     log.rotation.z = Math.PI * 0.5;
     log.position.set(-2.02, 0.96 + i * 0.17, 1.62 + (i % 2) * 0.12);
     cabinGroup.add(log);
   }
 
   const signTexture = makeCanvasTexture((ctx, canvas) => {
-    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    const gradient = ctx.createLinearGradient(
+      0,
+      0,
+      canvas.width,
+      canvas.height,
+    );
     gradient.addColorStop(0, "#6d4735");
     gradient.addColorStop(1, "#553426");
     ctx.fillStyle = gradient;
@@ -1108,40 +1318,65 @@ function buildScene() {
     ctx.strokeRect(16, 16, canvas.width - 32, canvas.height - 32);
     ctx.fillStyle = "#f5e5c7";
     ctx.textAlign = "center";
-    ctx.font = "700 54px Georgia";
-    ctx.fillText("Pål Djuve", canvas.width / 2, 208);
-    ctx.font = "700 52px Georgia";
-    ctx.fillText("Vambheim", canvas.width / 2, 276);
-    ctx.font = "500 24px Georgia";
-    ctx.fillText("Klikk for CV", canvas.width / 2, 360);
-  });
+    ctx.font = "700 62px Georgia";
+    ctx.fillText("Pål Djuve Vambheim", canvas.width / 2, 156);
+    ctx.font = "500 30px Georgia";
+    ctx.fillText("Klikk for CV", canvas.width / 2, 244);
+  }, { width: 768, height: 352 });
 
   const signBoard = new THREE.Mesh(
-    new THREE.BoxGeometry(1.34, 0.84, 0.12),
-    new THREE.MeshStandardMaterial({ map: signTexture, roughness: 0.82 })
+    new THREE.BoxGeometry(1.56, 0.72, 0.12),
+    new THREE.MeshStandardMaterial({ map: signTexture, roughness: 0.82 }),
   );
-  signBoard.position.set(-1.58, 2.02, 3.91);
+  const signBacking = new THREE.Mesh(
+    new THREE.BoxGeometry(1.76, 0.84, 0.12),
+    wallMaterial,
+  );
+  signBacking.position.set(0.22, 3.1, 2.11);
+  cabinGroup.add(signBacking);
+  const signFacadeFill = new THREE.Mesh(
+    new THREE.BoxGeometry(1.7, 1.16, 0.14),
+    wallMaterial,
+  );
+  signFacadeFill.position.set(0.22, 3.58, 2.12);
+  cabinGroup.add(signFacadeFill);
+  signBoard.position.set(0.22, 3.1, 2.27);
   cabinGroup.add(signBoard);
   addInteractive(signBoard, "resume", {
-    position: new THREE.Vector3(-3.9, 2.7, 6.1),
-    target: new THREE.Vector3(-1.58, 2.02, 3.92)
+    position: new THREE.Vector3(-2.7, 3.25, 5.9),
+    target: new THREE.Vector3(0.22, 3.1, 2.27),
+  }, {
+    markerOffset: new THREE.Vector3(0, 0, 0.12),
   });
 
   thesisBoat = new THREE.Group();
-  thesisBoat.position.set(4.2, 0.06, 1.68);
-  const hull = new THREE.Mesh(new THREE.BoxGeometry(1.35, 0.22, 0.42), trimMaterial);
+  thesisBoat.position.set(5.8, 0.06, 1.08);
+  const hull = new THREE.Mesh(
+    new THREE.BoxGeometry(1.35, 0.22, 0.42),
+    trimMaterial,
+  );
   hull.rotation.z = 0.02;
   thesisBoat.add(hull);
-  const hullTop = new THREE.Mesh(new THREE.BoxGeometry(0.82, 0.12, 0.3), wallMaterial);
+  const hullTop = new THREE.Mesh(
+    new THREE.BoxGeometry(0.82, 0.12, 0.3),
+    wallMaterial,
+  );
   hullTop.position.y = 0.15;
   thesisBoat.add(hullTop);
-  const mastDeck = new THREE.Mesh(new THREE.BoxGeometry(0.86, 0.05, 0.18), metalMaterial);
+  const mastDeck = new THREE.Mesh(
+    new THREE.BoxGeometry(0.86, 0.05, 0.18),
+    metalMaterial,
+  );
   mastDeck.position.y = 0.23;
   thesisBoat.add(mastDeck);
   [-0.28, 0, 0.28].forEach((x) => {
     const rotor = new THREE.Mesh(
       new THREE.CylinderGeometry(0.06, 0.06, 0.72, 18),
-      new THREE.MeshStandardMaterial({ color: "#e7edf6", roughness: 0.34, metalness: 0.24 })
+      new THREE.MeshStandardMaterial({
+        color: "#e7edf6",
+        roughness: 0.34,
+        metalness: 0.24,
+      }),
     );
     rotor.position.set(x, 0.63, 0);
     rotorSails.push(rotor);
@@ -1149,33 +1384,48 @@ function buildScene() {
   });
   const wake = new THREE.Mesh(
     new THREE.PlaneGeometry(1.7, 0.34),
-    new THREE.MeshBasicMaterial({ color: "#d8eff8", transparent: true, opacity: 0.48 })
+    new THREE.MeshBasicMaterial({
+      color: "#d8eff8",
+      transparent: true,
+      opacity: 0.48,
+    }),
   );
   wake.position.set(0, -0.02, -0.28);
   wake.rotation.x = -Math.PI * 0.5;
   thesisBoat.add(wake);
   scene.add(thesisBoat);
   addInteractive(hull, "thesis", {
-    position: new THREE.Vector3(6.7, 1.95, 3.45),
-    target: new THREE.Vector3(4.2, 0.62, 1.65)
+    position: new THREE.Vector3(8.15, 1.95, 2.95),
+    target: new THREE.Vector3(5.8, 0.62, 1.05),
   });
 
-  const lanternHandle = new THREE.Mesh(new THREE.TorusGeometry(0.13, 0.02, 8, 20), trimMaterial);
+  const lanternHandle = new THREE.Mesh(
+    new THREE.TorusGeometry(0.13, 0.02, 8, 20),
+    trimMaterial,
+  );
+  const lanternBracket = new THREE.Mesh(
+    new THREE.BoxGeometry(0.18, 0.05, 0.05),
+    trimMaterial,
+  );
   const lanternBody = new THREE.Mesh(
     new THREE.CylinderGeometry(0.18, 0.22, 0.56, 6),
     new THREE.MeshStandardMaterial({
       color: "#d28639",
       emissive: "#ffbf60",
       emissiveIntensity: 0.92,
-      flatShading: true
-    })
+      flatShading: true,
+    }),
   );
-  lanternHandle.position.set(1.18, 2.52, 2.28);
-  lanternBody.position.set(1.18, 2.15, 2.28);
-  cabinGroup.add(lanternHandle, lanternBody);
+  lanternBracket.position.set(-1.02, 3.04, 2.34);
+  lanternHandle.position.set(-1.02, 2.92, 2.58);
+  lanternHandle.rotation.z = 0;
+  lanternBody.position.set(-1.02, 2.56, 2.58);
+  cabinGroup.add(lanternBracket, lanternHandle, lanternBody);
   addInteractive(lanternBody, "about", {
-    position: new THREE.Vector3(3.45, 2.8, 4.9),
-    target: new THREE.Vector3(1.15, 2.12, 2.25)
+    position: new THREE.Vector3(-3.85, 3.15, 5.5),
+    target: new THREE.Vector3(-1.02, 2.56, 2.58),
+  }, {
+    marker: false,
   });
 
   windowLight.position.set(0, 2.35, 1.15);
@@ -1187,19 +1437,28 @@ function buildScene() {
         color: "#d8dde6",
         transparent: true,
         opacity: 0.72,
-        roughness: 1
-      })
+        roughness: 1,
+      }),
     );
     puff.position
       .copy(chimney.position)
-      .add(new THREE.Vector3((Math.random() - 0.5) * 0.08, 0.72 + i * 0.24, (Math.random() - 0.5) * 0.08));
+      .add(
+        new THREE.Vector3(
+          (Math.random() - 0.5) * 0.08,
+          0.72 + i * 0.24,
+          (Math.random() - 0.5) * 0.08,
+        ),
+      );
     puff.userData.offset = Math.random() * Math.PI * 2;
     smokePuffs.push(puff);
     cabinGroup.add(puff);
   }
 
   for (let i = 0; i < 10; i += 1) {
-    const snowLip = new THREE.Mesh(new THREE.BoxGeometry(0.36, 0.12, 0.36), snowMaterial);
+    const snowLip = new THREE.Mesh(
+      new THREE.BoxGeometry(0.36, 0.12, 0.36),
+      snowMaterial,
+    );
     snowLip.position.set(-1.72 + i * 0.38, 3.54, 2.24);
     cabinGroup.add(snowLip);
   }
@@ -1214,15 +1473,18 @@ function buildScene() {
     snowPositions[i * 3 + 2] = (Math.random() - 0.5) * 18;
     snowVelocities[i] = 0.02 + Math.random() * 0.03;
   }
-  snowGeometry.setAttribute("position", new THREE.BufferAttribute(snowPositions, 3));
+  snowGeometry.setAttribute(
+    "position",
+    new THREE.BufferAttribute(snowPositions, 3),
+  );
   snowPoints = new THREE.Points(
     snowGeometry,
     new THREE.PointsMaterial({
       color: "#ffffff",
       size: 0.09,
       transparent: true,
-      opacity: 0.82
-    })
+      opacity: 0.82,
+    }),
   );
   scene.add(snowPoints);
 }
@@ -1255,7 +1517,8 @@ function setTheme(theme) {
     snowPoints.material.opacity = theme === "night" ? 0.42 : 0.82;
   }
 
-  themeToggle.textContent = content[state.language].ui[theme === "day" ? "themeDay" : "themeNight"];
+  themeToggle.textContent =
+    content[state.language].ui[theme === "day" ? "themeDay" : "themeNight"];
 }
 
 function updateSceneStatus() {
@@ -1292,7 +1555,7 @@ function animateFocus(focus, onComplete) {
     endTarget: focus.target.clone(),
     elapsed: 0,
     duration: 0.8,
-    onComplete
+    onComplete,
   };
   controls.enabled = false;
 }
@@ -1311,7 +1574,9 @@ function openPanel(panelId, skipFocus = false) {
   modal.setAttribute("aria-hidden", "false");
 
   if (!skipFocus) {
-    const source = interactiveObjects.find((mesh) => mesh.userData.panelId === panelId);
+    const source = interactiveObjects.find(
+      (mesh) => mesh.userData.panelId === panelId,
+    );
     if (source?.userData.focus) {
       animateFocus(source.userData.focus, () => {
         controls.enabled = false;
@@ -1341,7 +1606,10 @@ function openPanel(panelId, skipFocus = false) {
           <h3>${ui.sections.skills}</h3>
           <p><a href="https://github.com/paalvambheim" target="_blank" rel="noreferrer">github.com/paalvambheim</a></p>
           <div class="tag-row">
-            ${content[state.language].resume.skills.slice(0, 12).map((skill) => `<span class="tag">${skill}</span>`).join("")}
+            ${content[state.language].resume.skills
+              .slice(0, 12)
+              .map((skill) => `<span class="tag">${skill}</span>`)
+              .join("")}
           </div>
         </article>
       </div>
@@ -1396,25 +1664,6 @@ function openPanel(panelId, skipFocus = false) {
     `;
   }
 
-  if (panelId === "inside") {
-    modalKicker.textContent = ui.modalKickerInside;
-    modalTitle.textContent = ui.insideTitle;
-    modalBody.innerHTML = `
-      <div class="about-layout">
-        <article class="info-card">
-          <h3>${ui.insideTitle}</h3>
-          <p>${ui.insideText}</p>
-        </article>
-        <article class="info-card">
-          <h3>${ui.aboutTitle}</h3>
-          <p>${ui.aboutText}</p>
-          <ul class="resume-bullets">
-            ${ui.aboutBullets.map((bullet) => `<li>${bullet}</li>`).join("")}
-          </ul>
-        </article>
-      </div>
-    `;
-  }
 }
 
 function closePanel() {
@@ -1430,96 +1679,80 @@ function renderResume(language) {
   const { resume, ui } = content[language];
   return `
     <div class="resume-layout">
-      <section class="resume-section">
-        <article class="resume-card">
-          <div class="resume-header">
-            <h3>${ui.sections.summary}</h3>
-            <span class="section-label">Bouvet Norge AS</span>
-          </div>
-          <p>${resume.summary}</p>
-        </article>
-        <article class="resume-card">
-          <h3>${ui.sections.strengths}</h3>
-          <ul class="resume-bullets">
-            ${resume.strengths.map((bullet) => `<li>${bullet}</li>`).join("")}
-          </ul>
-        </article>
-        <article class="resume-card">
-          <h3>${ui.sections.experience}</h3>
-          <div class="timeline-list">
-            ${resume.experience
-              .map(
-                (item) => `
-                  <section class="timeline-item">
-                    <h3>${item.title}</h3>
-                    <p class="timeline-meta">${item.company} · ${item.date} · ${item.role}</p>
-                    <ul class="resume-bullets">
-                      ${item.bullets.map((bullet) => `<li>${bullet}</li>`).join("")}
-                    </ul>
-                  </section>
-                `
-              )
-              .join("")}
-          </div>
-        </article>
-      </section>
-      <aside class="timeline-section">
-        <article class="resume-card">
-          <h3>${ui.sections.education}</h3>
-          <ul class="resume-list">
-            ${resume.education
-              .map(
-                (item) => `
-                  <li>
-                    <strong>${item.title}</strong>
-                    <p>${item.place}</p>
-                    <p class="timeline-meta">${item.date}</p>
-                  </li>
-                `
-              )
-              .join("")}
-          </ul>
-        </article>
-        <article class="resume-card">
-          <h3>${ui.sections.certifications}</h3>
-          <ul class="resume-list">
-            ${resume.certifications
-              .map(
-                (item) => `
-                  <li>
-                    <strong>${item.title}</strong>
-                    <p class="timeline-meta">${item.meta}</p>
-                  </li>
-                `
-              )
-              .join("")}
-          </ul>
-        </article>
-        <article class="resume-card">
-          <h3>${ui.sections.courses}</h3>
-          <ul class="resume-list">
-            ${resume.courses.map((course) => `<li>${course}</li>`).join("")}
-          </ul>
-        </article>
-        <article class="resume-card">
-          <h3>${ui.sections.roles}</h3>
-          <div class="tag-row">${resume.roles.map((role) => `<span class="tag">${role}</span>`).join("")}</div>
-        </article>
-        <article class="resume-card">
-          <h3>${ui.sections.languages}</h3>
-          <div class="tag-row">${resume.languages.map((languageValue) => `<span class="tag">${languageValue}</span>`).join("")}</div>
-        </article>
-        <article class="resume-card">
-          <h3>${ui.sections.industries}</h3>
-          <ul class="resume-list">
-            ${resume.industries.map((industry) => `<li>${industry}</li>`).join("")}
-          </ul>
-        </article>
-        <article class="resume-card">
-          <h3>${ui.sections.skills}</h3>
-          <div class="tag-row">${resume.skills.map((skill) => `<span class="tag">${skill}</span>`).join("")}</div>
-        </article>
-      </aside>
+      <article class="resume-card">
+        <div class="resume-header">
+          <h3>${ui.sections.summary}</h3>
+          <span class="section-label">Bouvet Norge AS</span>
+        </div>
+        <p>${resume.summary}</p>
+      </article>
+      <article class="resume-card">
+        <h3>${ui.sections.experience}</h3>
+        <div class="timeline-list">
+          ${resume.experience
+            .map(
+              (item) => `
+                <section class="timeline-item">
+                  <h3>${item.title}</h3>
+                  <p class="timeline-meta">${item.company} · ${item.date} · ${item.role}</p>
+                  <ul class="resume-bullets">
+                    ${item.bullets.map((bullet) => `<li>${bullet}</li>`).join("")}
+                  </ul>
+                </section>
+              `,
+            )
+            .join("")}
+        </div>
+      </article>
+      <article class="resume-card">
+        <h3>${ui.sections.education}</h3>
+        <ul class="resume-list">
+          ${resume.education
+            .map(
+              (item) => `
+                <li>
+                  <strong>${item.title}</strong>
+                  <p>${item.place}</p>
+                  <p class="timeline-meta">${item.date}</p>
+                </li>
+              `,
+            )
+            .join("")}
+        </ul>
+      </article>
+      <article class="resume-card">
+        <h3>${ui.sections.certifications}</h3>
+        <ul class="resume-list">
+          ${resume.certifications
+            .map(
+              (item) => `
+                <li>
+                  <strong>${item.title}</strong>
+                  <p class="timeline-meta">${item.meta}</p>
+                </li>
+              `,
+            )
+            .join("")}
+        </ul>
+      </article>
+      <article class="resume-card">
+        <h3>${ui.sections.courses}</h3>
+        <ul class="resume-list">
+          ${resume.courses.map((course) => `<li>${course}</li>`).join("")}
+        </ul>
+      </article>
+      <article class="resume-card">
+        <h3>${ui.sections.roles}</h3>
+        <div class="tag-row">${resume.roles.map((role) => `<span class="tag">${role}</span>`).join("")}</div>
+      </article>
+      <article class="resume-card">
+        <h3>${ui.sections.languages}</h3>
+        <div class="tag-row">${resume.languages.map((languageValue) => `<span class="tag">${languageValue}</span>`).join("")}</div>
+      </article>
+      <article class="resume-card">
+        <h3>${ui.sections.skills}</h3>
+        <div class="tag-row">${resume.skills.map((skill) => `<span class="tag">${skill}</span>`).join("")}</div>
+      </article>
     </div>
   `;
 }
@@ -1532,7 +1765,8 @@ function handlePointerMove(event) {
   if (!state.activePanel && !state.pointerDown) {
     raycaster.setFromCamera(pointer, camera);
     const hits = raycaster.intersectObjects(interactiveObjects, false);
-    state.hoveredPanel = hits.length > 0 ? hits[0].object.userData.panelId : null;
+    state.hoveredPanel =
+      hits.length > 0 ? hits[0].object.userData.panelId : null;
     sceneCanvas.style.cursor = hits.length > 0 ? "pointer" : "grab";
     updateSceneStatus();
   }
@@ -1543,7 +1777,10 @@ function handlePointerUp(event) {
     return;
   }
 
-  const moved = Math.hypot(event.clientX - state.pointerDown.x, event.clientY - state.pointerDown.y);
+  const moved = Math.hypot(
+    event.clientX - state.pointerDown.x,
+    event.clientY - state.pointerDown.y,
+  );
   state.pointerDown = null;
   if (moved > 6 || state.activePanel) {
     return;
@@ -1564,8 +1801,10 @@ function updateSnow(delta) {
 
   const sway = state.theme === "night" ? 0.3 : 0.75;
   for (let i = 0; i < snowVelocities.length; i += 1) {
-    snowPositions[i * 3] += Math.sin((clock.elapsedTime + i) * 0.2) * 0.002 * sway;
-    snowPositions[i * 3 + 1] -= snowVelocities[i] * (state.theme === "night" ? 0.55 : 1.05);
+    snowPositions[i * 3] +=
+      Math.sin((clock.elapsedTime + i) * 0.2) * 0.002 * sway;
+    snowPositions[i * 3 + 1] -=
+      snowVelocities[i] * (state.theme === "night" ? 0.55 : 1.05);
     if (snowPositions[i * 3 + 1] < 0) {
       snowPositions[i * 3 + 1] = 10 + Math.random() * 2;
       snowPositions[i * 3] = (Math.random() - 0.5) * 18;
@@ -1582,7 +1821,10 @@ function updateSmoke() {
     puff.position.z = -0.4 + Math.cos(time * 1.1) * 0.1;
     puff.position.y = 4.8 + ((time + index * 0.2) % 2.2);
     puff.scale.setScalar(0.9 + ((time + index * 0.16) % 1) * 1.2);
-    puff.material.opacity = Math.max(0, 0.62 - ((time + index * 0.16) % 1) * 0.36);
+    puff.material.opacity = Math.max(
+      0,
+      0.62 - ((time + index * 0.16) % 1) * 0.36,
+    );
   });
 }
 
@@ -1606,8 +1848,16 @@ function updateFocusAnimation(delta) {
   animation.elapsed += delta;
   const t = Math.min(animation.elapsed / animation.duration, 1);
   const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-  camera.position.lerpVectors(animation.startPosition, animation.endPosition, eased);
-  controls.target.lerpVectors(animation.startTarget, animation.endTarget, eased);
+  camera.position.lerpVectors(
+    animation.startPosition,
+    animation.endPosition,
+    eased,
+  );
+  controls.target.lerpVectors(
+    animation.startTarget,
+    animation.endTarget,
+    eased,
+  );
   if (t >= 1) {
     const onComplete = animation.onComplete;
     state.focusAnimation = null;
