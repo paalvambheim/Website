@@ -968,43 +968,45 @@ function buildScene() {
     cabinGroup.add(sideLogOpposite);
   }
 
-  [
-    { size: [4.72, 0.58, 0.12], position: [0, 3.02, 2.11] },
-    { size: [1.08, 0.52, 0.12], position: [-1.47, 1.16, 2.11] },
-    { size: [1.08, 0.52, 0.12], position: [1.6, 1.16, 2.11] },
-    { size: [0.5, 2.1, 0.12], position: [-0.62, 2.0, 2.11] },
-    { size: [0.34, 2.1, 0.12], position: [0.9, 2.0, 2.11] },
-    { size: [0.38, 2.1, 0.12], position: [-2.0, 2.0, 2.11] },
-    { size: [0.22, 2.1, 0.12], position: [2.18, 2.0, 2.11] },
-  ].forEach(({ size, position }) => {
-    const panel = new THREE.Mesh(
-      new THREE.BoxGeometry(size[0], size[1], size[2]),
-      wallMaterial,
-    );
-    panel.position.set(position[0], position[1], position[2]);
-    cabinGroup.add(panel);
+  const frontWallShape = new THREE.Shape();
+  frontWallShape.moveTo(-2.36, 0.76);
+  frontWallShape.lineTo(2.36, 0.76);
+  frontWallShape.lineTo(2.36, 3.52);
+  frontWallShape.lineTo(0, 5.04);
+  frontWallShape.lineTo(-2.36, 3.52);
+  frontWallShape.lineTo(-2.36, 0.76);
+
+  const leftWindowHole = new THREE.Path();
+  leftWindowHole.moveTo(-2.06, 1.5);
+  leftWindowHole.lineTo(-0.88, 1.5);
+  leftWindowHole.lineTo(-0.88, 2.74);
+  leftWindowHole.lineTo(-2.06, 2.74);
+  leftWindowHole.lineTo(-2.06, 1.5);
+  frontWallShape.holes.push(leftWindowHole);
+
+  const rightWindowHole = new THREE.Path();
+  rightWindowHole.moveTo(1.0, 1.5);
+  rightWindowHole.lineTo(2.18, 1.5);
+  rightWindowHole.lineTo(2.18, 2.74);
+  rightWindowHole.lineTo(1.0, 2.74);
+  rightWindowHole.lineTo(1.0, 1.5);
+  frontWallShape.holes.push(rightWindowHole);
+
+  const doorHole = new THREE.Path();
+  doorHole.moveTo(-0.37, 0.76);
+  doorHole.lineTo(0.77, 0.76);
+  doorHole.lineTo(0.77, 2.9);
+  doorHole.lineTo(-0.37, 2.9);
+  doorHole.lineTo(-0.37, 0.76);
+  frontWallShape.holes.push(doorHole);
+
+  const frontWallGeometry = new THREE.ExtrudeGeometry(frontWallShape, {
+    depth: 0.14,
+    bevelEnabled: false,
   });
-  const lowerFacadeTrim = new THREE.Mesh(
-    new THREE.BoxGeometry(4.78, 0.08, 0.08),
-    trimMaterial,
-  );
-  lowerFacadeTrim.position.set(0, 0.98, 2.17);
-  cabinGroup.add(lowerFacadeTrim);
-  const upperFacadeTrim = new THREE.Mesh(
-    new THREE.BoxGeometry(4.78, 0.08, 0.08),
-    trimMaterial,
-  );
-  upperFacadeTrim.position.set(0, 3.08, 2.17);
-  cabinGroup.add(upperFacadeTrim);
-  const leftFacadeTrim = new THREE.Mesh(
-    new THREE.BoxGeometry(0.08, 2.88, 0.08),
-    trimMaterial,
-  );
-  leftFacadeTrim.position.set(-2.36, 2.12, 2.17);
-  cabinGroup.add(leftFacadeTrim);
-  const rightFacadeTrim = leftFacadeTrim.clone();
-  rightFacadeTrim.position.x = 2.36;
-  cabinGroup.add(rightFacadeTrim);
+  const frontWall = new THREE.Mesh(frontWallGeometry, wallMaterial);
+  frontWall.position.z = 2.05;
+  cabinGroup.add(frontWall);
 
   [
     [-2.2, -2.02],
@@ -1063,9 +1065,6 @@ function buildScene() {
     depth: 0.12,
     bevelEnabled: false,
   });
-  const frontGable = new THREE.Mesh(gableGeometry, wallMaterial);
-  frontGable.position.set(0, 3.52, 2.12);
-  cabinGroup.add(frontGable);
   const backGable = new THREE.Mesh(gableGeometry, wallMaterial);
   backGable.position.set(0, 3.52, -2.24);
   cabinGroup.add(backGable);
@@ -1328,18 +1327,6 @@ function buildScene() {
     new THREE.BoxGeometry(1.56, 0.72, 0.12),
     new THREE.MeshStandardMaterial({ map: signTexture, roughness: 0.82 }),
   );
-  const signBacking = new THREE.Mesh(
-    new THREE.BoxGeometry(1.76, 0.84, 0.12),
-    wallMaterial,
-  );
-  signBacking.position.set(0.22, 3.1, 2.11);
-  cabinGroup.add(signBacking);
-  const signFacadeFill = new THREE.Mesh(
-    new THREE.BoxGeometry(1.7, 1.16, 0.14),
-    wallMaterial,
-  );
-  signFacadeFill.position.set(0.22, 3.58, 2.12);
-  cabinGroup.add(signFacadeFill);
   signBoard.position.set(0.22, 3.1, 2.27);
   cabinGroup.add(signBoard);
   addInteractive(signBoard, "resume", {
@@ -1424,8 +1411,6 @@ function buildScene() {
   addInteractive(lanternBody, "about", {
     position: new THREE.Vector3(-3.85, 3.15, 5.5),
     target: new THREE.Vector3(-1.02, 2.56, 2.58),
-  }, {
-    marker: false,
   });
 
   windowLight.position.set(0, 2.35, 1.15);
