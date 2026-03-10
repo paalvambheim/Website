@@ -14,10 +14,9 @@ const content = {
       sceneStatusLabel: "Explore the cabin",
       sceneTitle: "Rotate the cabin and inspect the objects around the walls.",
       sceneHint:
-        "Click the wanted poster for the resume, the laptop for GitHub, the lantern for a short profile, the skis for tools, the ship for the thesis, or the window glow for a closer interior look.",
+        "Click the name sign for the resume, the lantern for a short profile, the skis for tools, the ship for the thesis, or the window glow for a closer interior look.",
       hotspotNames: {
-        resume: "Wanted poster",
-        github: "Laptop on the log stump",
+        resume: "Name sign",
         about: "Lantern by the door",
         thesis: "Rotor-sail ship on the pond",
         skills: "Skis on the side wall",
@@ -38,14 +37,10 @@ const content = {
       modalKickerSkills: "Toolkit",
       modalKickerInside: "Inside the cabin",
       resumeTitle: "Resume",
-      githubTitle: "GitHub outpost",
       aboutTitle: "Around the cabin",
       thesisTitle: "Rotor sails and maritime UI",
       skillsTitle: "Skis and stack",
       insideTitle: "Inside the cabin",
-      githubText:
-        "The porch laptop points straight to Pål's public GitHub profile, where frontend experiments, student work, and engineering side projects can live in the open.",
-      githubAction: "Open github.com/paalvambheim",
       aboutText:
         "Pål combines interaction design, product thinking, and implementation. He tends to work best where design conversations and production code meet.",
       aboutBullets: [
@@ -225,10 +220,9 @@ const content = {
       sceneStatusLabel: "Utforsk hytta",
       sceneTitle: "Roter hytta og undersøk gjenstandene rundt veggene.",
       sceneHint:
-        "Klikk wanted-plakaten for CV-en, laptopen for GitHub, lykten for en kort profil, skiene for verktøy, skipet for masteroppgaven eller vinduslyset for å komme nærmere innsynet i stua.",
+        "Klikk navneskiltet for CV-en, lykten for en kort profil, skiene for verktøy, skipet for masteroppgaven eller vinduslyset for å komme nærmere innsynet i stua.",
       hotspotNames: {
-        resume: "Wanted-plakat",
-        github: "Laptop på vedkubben",
+        resume: "Navneskilt",
         about: "Lykt ved døra",
         thesis: "Rotorseilskipet i dammen",
         skills: "Skiene på sideveggen",
@@ -249,14 +243,10 @@ const content = {
       modalKickerSkills: "Verktøy",
       modalKickerInside: "Inne i hytta",
       resumeTitle: "CV",
-      githubTitle: "GitHub-utpost",
       aboutTitle: "Rundt hytta",
       thesisTitle: "Rotorseil og maritimt grensesnitt",
       skillsTitle: "Ski og stack",
       insideTitle: "Inne i hytta",
-      githubText:
-        "Laptopen på verandaen peker rett til Påls offentlige GitHub-profil, der frontend-eksperimenter, studentarbeid og tekniske sideprosjekter kan ligge åpent.",
-      githubAction: "Åpne github.com/paalvambheim",
       aboutText:
         "Pål kombinerer interaksjonsdesign, produktforståelse og implementasjon. Han fungerer best der designsamtaler og produksjonskode møtes.",
       aboutBullets: [
@@ -814,6 +804,40 @@ function buildScene() {
   pond.scale.set(1, 1, 0.66);
   scene.add(pond);
 
+  const ridgeLine = new THREE.Mesh(
+    new THREE.CylinderGeometry(18, 21, 3.6, 18, 1, true, Math.PI * 0.16, Math.PI * 1.68),
+    new THREE.MeshStandardMaterial({ color: "#d8e4ef", roughness: 1, side: THREE.DoubleSide })
+  );
+  ridgeLine.position.set(0, 0.95, -1.6);
+  scene.add(ridgeLine);
+
+  for (let i = 0; i < 34; i += 1) {
+    const angle = (i / 34) * Math.PI * 2;
+    const z = Math.sin(angle);
+    if (z > 0.52) {
+      continue;
+    }
+    const tree = new THREE.Group();
+    const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.14, 1.2, 7), trimMaterial);
+    const foliageLower = new THREE.Mesh(
+      new THREE.ConeGeometry(0.72, 1.6, 8),
+      new THREE.MeshStandardMaterial({ color: "#3f5a48", roughness: 0.95 })
+    );
+    foliageLower.position.y = 1.02;
+    const foliageUpper = new THREE.Mesh(
+      new THREE.ConeGeometry(0.48, 1.1, 8),
+      new THREE.MeshStandardMaterial({ color: "#334c3d", roughness: 0.95 })
+    );
+    foliageUpper.position.y = 1.68;
+    const snowCap = new THREE.Mesh(new THREE.ConeGeometry(0.5, 0.22, 8), snowMaterial);
+    snowCap.position.y = 2.18;
+    tree.add(trunk, foliageLower, foliageUpper, snowCap);
+    const radius = 13.4 + (i % 5) * 0.7 + Math.random() * 1.2;
+    tree.position.set(Math.cos(angle) * radius, 0.05, Math.sin(angle) * radius - 0.8);
+    tree.scale.setScalar(0.85 + (i % 4) * 0.18);
+    scene.add(tree);
+  }
+
   const foundation = new THREE.Mesh(new THREE.BoxGeometry(4.9, 0.65, 4.55), stoneMaterial);
   foundation.position.y = 0.33;
   cabinGroup.add(foundation);
@@ -828,10 +852,8 @@ function buildScene() {
 
   for (let i = 0; i < 12; i += 1) {
     const y = 0.88 + i * 0.23;
-    const frontLog = new THREE.Mesh(new THREE.BoxGeometry(4.9, 0.16, 0.22), trimMaterial);
-    frontLog.position.set(0, y, 2.18);
-    cabinGroup.add(frontLog);
-    const backLog = frontLog.clone();
+    const backLog = new THREE.Mesh(new THREE.BoxGeometry(4.9, 0.16, 0.22), trimMaterial);
+    backLog.position.y = y;
     backLog.position.z = -2.18;
     cabinGroup.add(backLog);
     const sideLog = new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.16, 4.06), trimMaterial);
@@ -840,6 +862,15 @@ function buildScene() {
     const sideLogOpposite = sideLog.clone();
     sideLogOpposite.position.x = -2.33;
     cabinGroup.add(sideLogOpposite);
+  }
+
+  const frontFacade = new THREE.Mesh(new THREE.BoxGeometry(4.72, 2.86, 0.12), wallMaterial);
+  frontFacade.position.set(0, 2.12, 2.11);
+  cabinGroup.add(frontFacade);
+  for (let i = 0; i < 5; i += 1) {
+    const trimStrip = new THREE.Mesh(new THREE.BoxGeometry(4.78, 0.08, 0.08), trimMaterial);
+    trimStrip.position.set(0, 1.03 + i * 0.48, 2.17);
+    cabinGroup.add(trimStrip);
   }
 
   [
@@ -970,11 +1001,11 @@ function buildScene() {
       new THREE.PlaneGeometry(width - 0.08, height - 0.08),
       new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide })
     );
-    interior.position.z = -0.01;
+    interior.position.z = -0.14;
     group.add(interior);
 
     const glass = new THREE.Mesh(new THREE.BoxGeometry(width, height, 0.06), glassMaterial);
-    glass.position.z = 0.05;
+    glass.position.z = 0.02;
     group.add(glass);
 
     const mullionVertical = new THREE.Mesh(new THREE.BoxGeometry(0.08, height - 0.08, 0.08), trimMaterial);
@@ -994,11 +1025,11 @@ function buildScene() {
   }
 
   const leftWindowUnit = createWindowUnit({
-    position: new THREE.Vector3(-1.47, 2.12, 2.24),
+    position: new THREE.Vector3(-1.47, 2.12, 2.17),
     texture: livingRoomLeftTexture
   });
   const rightWindowUnit = createWindowUnit({
-    position: new THREE.Vector3(1.6, 2.12, 2.24),
+    position: new THREE.Vector3(1.6, 2.12, 2.17),
     texture: livingRoomRightTexture
   });
   createWindowUnit({
@@ -1059,39 +1090,41 @@ function buildScene() {
     cabinGroup.add(log);
   }
 
-  const posterBoard = new THREE.Mesh(new THREE.BoxGeometry(1.02, 1.36, 0.12), trimMaterial);
-  posterBoard.position.set(-1.76, 1.78, 3.84);
-  cabinGroup.add(posterBoard);
-
-  const posterTexture = makeCanvasTexture((ctx, canvas) => {
-    ctx.fillStyle = "#eadac0";
+  const signTexture = makeCanvasTexture((ctx, canvas) => {
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    gradient.addColorStop(0, "#6d4735");
+    gradient.addColorStop(1, "#553426");
+    ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#5a3827";
-    ctx.font = "700 60px Georgia";
+    for (let i = 0; i < 8; i += 1) {
+      ctx.strokeStyle = `rgba(255,255,255,${0.04 + i * 0.01})`;
+      ctx.beginPath();
+      ctx.moveTo(0, i * 64 + 18);
+      ctx.lineTo(canvas.width, i * 64 + 6);
+      ctx.stroke();
+    }
+    ctx.strokeStyle = "rgba(35,20,14,0.45)";
+    ctx.lineWidth = 10;
+    ctx.strokeRect(16, 16, canvas.width - 32, canvas.height - 32);
+    ctx.fillStyle = "#f5e5c7";
     ctx.textAlign = "center";
-    ctx.fillText("WANTED", canvas.width / 2, 92);
-    ctx.fillStyle = "#d7b481";
-    ctx.beginPath();
-    ctx.arc(canvas.width / 2, 236, 86, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.fillStyle = "#5a3827";
-    ctx.fillRect(canvas.width / 2 - 54, 194, 108, 86);
-    ctx.fillRect(canvas.width / 2 - 70, 284, 140, 102);
-    ctx.font = "600 28px Georgia";
-    ctx.fillText("Pål D. Vambheim", canvas.width / 2, 432);
-    ctx.font = "500 23px Georgia";
-    ctx.fillText("CV / Prosjekter", canvas.width / 2, 466);
+    ctx.font = "700 54px Georgia";
+    ctx.fillText("Pål Djuve", canvas.width / 2, 208);
+    ctx.font = "700 52px Georgia";
+    ctx.fillText("Vambheim", canvas.width / 2, 276);
+    ctx.font = "500 24px Georgia";
+    ctx.fillText("Klikk for CV", canvas.width / 2, 360);
   });
 
-  const poster = new THREE.Mesh(
-    new THREE.PlaneGeometry(0.9, 1.2),
-    new THREE.MeshStandardMaterial({ map: posterTexture })
+  const signBoard = new THREE.Mesh(
+    new THREE.BoxGeometry(1.34, 0.84, 0.12),
+    new THREE.MeshStandardMaterial({ map: signTexture, roughness: 0.82 })
   );
-  poster.position.set(-1.76, 1.78, 3.92);
-  cabinGroup.add(poster);
-  addInteractive(poster, "resume", {
-    position: new THREE.Vector3(-3.8, 2.5, 6),
-    target: new THREE.Vector3(-1.76, 1.8, 3.9)
+  signBoard.position.set(-1.58, 2.02, 3.91);
+  cabinGroup.add(signBoard);
+  addInteractive(signBoard, "resume", {
+    position: new THREE.Vector3(-3.9, 2.7, 6.1),
+    target: new THREE.Vector3(-1.58, 2.02, 3.92)
   });
 
   thesisBoat = new THREE.Group();
@@ -1125,27 +1158,6 @@ function buildScene() {
   addInteractive(hull, "thesis", {
     position: new THREE.Vector3(6.7, 1.95, 3.45),
     target: new THREE.Vector3(4.2, 0.62, 1.65)
-  });
-
-  const stump = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.42, 0.76, 8), trimMaterial);
-  stump.position.set(-2.3, 1.06, 2.95);
-  cabinGroup.add(stump);
-  const laptopBase = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.08, 0.54), trimMaterial);
-  const laptopScreen = new THREE.Mesh(
-    new THREE.BoxGeometry(0.8, 0.56, 0.06),
-    new THREE.MeshStandardMaterial({
-      color: "#18293a",
-      emissive: "#8ad3ff",
-      emissiveIntensity: 0.78
-    })
-  );
-  laptopBase.position.set(-2.3, 1.48, 2.95);
-  laptopScreen.position.set(-2.3, 1.76, 2.78);
-  laptopScreen.rotation.x = -0.9;
-  cabinGroup.add(laptopBase, laptopScreen);
-  addInteractive(laptopScreen, "github", {
-    position: new THREE.Vector3(-4.7, 2.2, 5.4),
-    target: new THREE.Vector3(-2.32, 1.68, 2.86)
   });
 
   const lanternHandle = new THREE.Mesh(new THREE.TorusGeometry(0.13, 0.02, 8, 20), trimMaterial);
@@ -1313,24 +1325,6 @@ function openPanel(panelId, skipFocus = false) {
     modalBody.innerHTML = renderResume(state.language);
   }
 
-  if (panelId === "github") {
-    modalKicker.textContent = ui.modalKickerGithub;
-    modalTitle.textContent = ui.githubTitle;
-    modalBody.innerHTML = `
-      <div class="about-layout">
-        <article class="link-card">
-          <strong>github.com/paalvambheim</strong>
-          <p>${ui.githubText}</p>
-          <p><a href="https://github.com/paalvambheim" target="_blank" rel="noreferrer">${ui.githubAction}</a></p>
-        </article>
-        <article class="info-card">
-          <strong>Frontend + product + systems</strong>
-          <p>${content[state.language].resume.summary}</p>
-        </article>
-      </div>
-    `;
-  }
-
   if (panelId === "about") {
     modalKicker.textContent = ui.modalKickerAbout;
     modalTitle.textContent = ui.aboutTitle;
@@ -1345,6 +1339,7 @@ function openPanel(panelId, skipFocus = false) {
         </article>
         <article class="info-card">
           <h3>${ui.sections.skills}</h3>
+          <p><a href="https://github.com/paalvambheim" target="_blank" rel="noreferrer">github.com/paalvambheim</a></p>
           <div class="tag-row">
             ${content[state.language].resume.skills.slice(0, 12).map((skill) => `<span class="tag">${skill}</span>`).join("")}
           </div>
