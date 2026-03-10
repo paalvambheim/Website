@@ -1,0 +1,5 @@
+.swift-cache/
+.swift-tmp/
+.DS_Store
+node_modules/
+dist/
