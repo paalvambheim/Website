@@ -432,11 +432,33 @@ const modalBackdrop = document.querySelector("#modal-backdrop");
 const state = {
   language: "no",
   theme: "night",
+  isMobile: window.matchMedia("(max-width: 760px)").matches,
   activePanel: null,
   pointerDown: null,
   focusAnimation: null,
   hoveredPanel: null,
+  hasSized: false,
 };
+
+function getViewportPreset(isMobile) {
+  if (isMobile) {
+    return {
+      fov: 50,
+      position: new THREE.Vector3(9.6, 6.25, 11.2),
+      target: new THREE.Vector3(0, 1.9, 0.35),
+    };
+  }
+
+  return {
+    fov: 42,
+    position: new THREE.Vector3(8, 5.4, 9),
+    target: new THREE.Vector3(0, 1.6, 0),
+  };
+}
+
+function isMobileViewport() {
+  return window.matchMedia("(max-width: 760px)").matches;
+}
 
 const scene = new THREE.Scene();
 const renderer = new THREE.WebGLRenderer({
@@ -447,16 +469,21 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
-const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
-camera.position.set(8, 5.4, 9);
+const initialViewport = getViewportPreset(state.isMobile);
+const camera = new THREE.PerspectiveCamera(initialViewport.fov, 1, 0.1, 100);
+camera.position.copy(initialViewport.position);
 
 const controls = new OrbitControls(camera, sceneCanvas);
 controls.enableDamping = true;
+controls.enablePan = false;
 controls.minDistance = 5;
 controls.maxDistance = 15;
 controls.minPolarAngle = 0.6;
 controls.maxPolarAngle = 1.35;
-controls.target.set(0, 1.6, 0);
+controls.rotateSpeed = 0.9;
+controls.touches.ONE = THREE.TOUCH.ROTATE;
+controls.touches.TWO = THREE.TOUCH.DOLLY_ROTATE;
+controls.target.copy(initialViewport.target);
 
 const clock = new THREE.Clock();
 const raycaster = new THREE.Raycaster();
@@ -1478,9 +1505,28 @@ buildScene();
 
 function resize() {
   const { clientWidth, clientHeight } = sceneCanvas;
+  const isMobile = isMobileViewport();
+  const preset = getViewportPreset(isMobile);
+  const modeChanged = isMobile !== state.isMobile;
+  state.isMobile = isMobile;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.35 : 2));
   renderer.setSize(clientWidth, clientHeight, false);
+  camera.fov = preset.fov;
   camera.aspect = clientWidth / clientHeight;
   camera.updateProjectionMatrix();
+  controls.minDistance = isMobile ? 6.4 : 5;
+  controls.maxDistance = isMobile ? 18 : 15;
+  controls.maxPolarAngle = isMobile ? 1.42 : 1.35;
+  controls.rotateSpeed = isMobile ? 0.72 : 0.9;
+  defaultFocus.position.copy(preset.position);
+  defaultFocus.target.copy(preset.target);
+
+  if ((!state.hasSized || modeChanged) && !state.activePanel && !state.focusAnimation) {
+    camera.position.copy(preset.position);
+    controls.target.copy(preset.target);
+  }
+
+  state.hasSized = true;
 }
 
 function setTheme(theme) {
@@ -1747,6 +1793,10 @@ function handlePointerMove(event) {
   pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
   pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
 
+  if (state.isMobile) {
+    return;
+  }
+
   if (!state.activePanel && !state.pointerDown) {
     raycaster.setFromCamera(pointer, camera);
     const hits = raycaster.intersectObjects(interactiveObjects, false);
@@ -1767,7 +1817,7 @@ function handlePointerUp(event) {
     event.clientY - state.pointerDown.y,
   );
   state.pointerDown = null;
-  if (moved > 6 || state.activePanel) {
+  if (moved > (state.isMobile ? 12 : 6) || state.activePanel) {
     return;
   }
 
@@ -1868,7 +1918,9 @@ sceneCanvas.addEventListener("pointermove", handlePointerMove);
 sceneCanvas.addEventListener("pointerup", handlePointerUp);
 sceneCanvas.addEventListener("pointerleave", () => {
   state.hoveredPanel = null;
-  sceneCanvas.style.cursor = "grab";
+  if (!state.isMobile) {
+    sceneCanvas.style.cursor = "grab";
+  }
   updateSceneStatus();
 });
 
